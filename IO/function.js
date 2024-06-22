@@ -9,11 +9,13 @@ function alertIndexInvalid(levelIndex) {
 
 
 function setSubjectName(level) {
+    let subjectNameCont = $("#subjectName");
     $(subjectNameCont).html(level.name);
 }
 
 
 function setSubject(level) {
+    let subjectCont = $("#subjectCont");
     $(subjectCont).html(level.subject);
 }
 
@@ -112,7 +114,7 @@ function checkAnswer() {
     for (let i=0; i<outputElemList.length; i++) {
         let outElem = outputElemList[i];
         let inElem = inputElemList[i];
-        let value = $(outElem).val();
+        let value = $(outElem).val().trim();
         let input = $(inElem).html();
         let correctAns = level.answer(input);
 

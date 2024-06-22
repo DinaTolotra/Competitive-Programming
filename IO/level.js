@@ -82,5 +82,5 @@ const levelData = [
     
             return binary;
         }
-    },
+    }
 ];

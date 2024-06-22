@@ -1,4 +1,4 @@
-const SUBJECTCOUNT = 3;
+const SUBJECTCOUNT = levelData.length;
 const INPUTCOUNT = 5;
 
 let subjectNameCont;
