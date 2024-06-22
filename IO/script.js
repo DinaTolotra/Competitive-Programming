@@ -6,17 +6,17 @@ let subjectCont;
 let inputEg;
 let outputEg;
 let inputList;
-let currentLevel;
+let currentLevel = -1;
 
 
 $(document).ready(function () {
     generateInputElm();
     resetInputValue();
-    
-    currentLevel = 0;
 
-    unlockLevel(currentLevel);
+    setLevelTracker();
+    
     lockUpperLevel();
+    unlockLevel(currentLevel);
 
     loadLevel(currentLevel);
 

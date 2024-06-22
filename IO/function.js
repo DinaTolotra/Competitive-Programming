@@ -156,7 +156,7 @@ function unlockLevel(levelIndex) {
 
 
 function lockUpperLevel() {
-    for (let i = 1 + currentLevel; i < SUBJECTCOUNT; i++) {
+    for (let i = 0; i < SUBJECTCOUNT; i++) {
         lockLevel(i);
     }
 }
@@ -164,6 +164,7 @@ function lockUpperLevel() {
 
 function nextLevel() {
     currentLevel++;
+    setLevelTracker();
     unlockLevel(currentLevel);
     loadLevel(currentLevel);
     resetInputValue();
@@ -176,4 +177,21 @@ function rand(min, max) {
         result = Math.round((10*Math.random())%max);
     } while (result < min);
     return result;
+}
+
+
+function setLevelTracker() {
+    let storageName = "LevelTracker";
+    let savedLevel = localStorage.getItem(storageName);
+
+    if (currentLevel == -1) {
+        if (savedLevel == null) {
+            currentLevel = 0;
+            localStorage.setItem(storageName, currentLevel);
+        } else if (savedLevel >= 0) {
+            currentLevel = savedLevel;
+        }
+    } else if(currentLevel >= 0) {
+        localStorage.setItem(storageName, currentLevel);
+    }
 }
