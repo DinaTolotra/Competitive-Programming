@@ -59,7 +59,7 @@ const levelData = [
 
             for (let i=0; i<count; i++) {
                 let nb = rand(last, max);
-                result += nb;
+                result += nb+' ';
                 last = nb;
             }
             return result;

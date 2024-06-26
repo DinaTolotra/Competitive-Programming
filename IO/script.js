@@ -15,8 +15,8 @@ $(document).ready(function () {
 
     setLevelTracker();
     
-    lockUpperLevel();
-    unlockLevel(currentLevel);
+    // lockUpperLevel();
+    // unlockLevel(currentLevel);
 
     loadLevel(currentLevel);
 

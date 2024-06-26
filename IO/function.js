@@ -123,9 +123,9 @@ function checkAnswer() {
     }
 
     if (allValid) {
+        alert("Next level!");
         setTimeout(() => {
-            alert("Next level!");
-            nextLevel();    
+            nextLevel();
         }, 500);
     }
 }
@@ -165,7 +165,7 @@ function lockUpperLevel() {
 function nextLevel() {
     currentLevel++;
     setLevelTracker();
-    unlockLevel(currentLevel);
+    // unlockLevel(currentLevel);
     loadLevel(currentLevel);
     resetInputValue();
 }
